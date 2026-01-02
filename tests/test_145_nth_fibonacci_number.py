@@ -1,7 +1,6 @@
 """This module contains tests for the nth fibonacci number calculation."""
 
 import pytest
-
 from challenges.id_145_nth_fibonacci_number.solution import nth_fibonacci
 
 

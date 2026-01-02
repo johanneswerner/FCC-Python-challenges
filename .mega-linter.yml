@@ -1,5 +1,9 @@
 APPLY_FIXES: all
 
+# Exclude workflow files from auto-fixes for security reasons
+APPLY_FIXES_IGNORE:
+  - .github/workflows/**
+
 DISABLE_LINTERS:
   - PYTHON_BANDIT
   - PYTHON_BLACK

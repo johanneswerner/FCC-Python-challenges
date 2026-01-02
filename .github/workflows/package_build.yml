@@ -14,24 +14,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Install uv
-      uses: astral-sh/setup-uv@v5
-      with:
-        enable-cache: true
-        cache-dependency-glob: "**/pyproject.toml"
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: "**/pyproject.toml"
 
-    - name: Install latest Python
-      run: uv python install
+      - name: Install latest Python
+        run: uv python install
 
-    - name: Install project + dev deps
-      run: uv sync --all-extras --dev
+      - name: Install project + dev deps
+        run: uv sync --all-extras --dev
 
-    - name: Run Ruff
-      run: |
-        uv run ruff check .
-        uv run ruff format --check .
+      - name: Run Ruff
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .
 
-    - name: Run pytest
-      run: uv run pytest tests/ -v
+      - name: Run pytest
+        run: uv run pytest tests/ -v

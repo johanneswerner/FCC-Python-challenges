@@ -1,15 +1,20 @@
-def nth_fibonacci(n):
-    """
-    Calculate the nth fibonacci number
+"""This module deals with the calculation of the nth fibonacci number."""
 
-    :param n: the nth fibonacci number to return
-    :return:  the corresponding fibonacci number
+
+def nth_fibonacci(n: int) -> int:
+    """Calculate the nth fibonacci number.
+
+    Args:
+      n (int): the nth fibonacci number to return
+
+    Returns:
+        the corresponding fibonacci number
     """
     fibonacci_numbers = [0, 1]
 
     if n == 0:
         return fibonacci_numbers[0]
-    elif n == 1:
+    if n == 1:
         return fibonacci_numbers[1]
 
     while len(fibonacci_numbers) < n:

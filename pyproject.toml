@@ -8,7 +8,35 @@ dependencies = []
 [dependency-groups]
 dev = [
     "pytest>=9.0.2",
+    "ruff>=0.14.10",
 ]
 
 [tool.pytest.ini_options]
 pythonpath = "."
+
+[tool.ruff]
+lint.select = ["ALL"]
+lint.ignore = [
+    "CPY001",
+    "D203", "D213",
+    "COM812"
+]
+
+fix = true
+lint.unfixable = []
+
+preview = true
+
+target-version = "py312"
+
+line-length = 88
+
+[tool.ruff.lint.per-file-ignores]
+"tests/test_*.py" = ["INP001", "S101"]
+"**/__init__.py" = ["D104"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"

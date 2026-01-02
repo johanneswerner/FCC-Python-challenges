@@ -136,6 +136,11 @@ jobs:
             (!contains(fromJSON('["refs/heads/main", "refs/heads/master"]'), github.ref))
           }}" >> "${GITHUB_ENV}"
 
+      # Clean up MegaLinter reports to avoid checkout conflicts
+      - name: Clean up MegaLinter reports
+        if: env.APPLY_FIXES_IF_PR == 'true'
+        run: sudo rm -rf megalinter-reports/
+
       # Create pull request if applicable
       # (for now works only on PR from same repository, not from forks)
       - name: Create Pull Request with applied fixes

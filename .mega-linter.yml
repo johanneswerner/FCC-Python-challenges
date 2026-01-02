@@ -6,5 +6,6 @@ DISABLE_LINTERS:
   - SPELL_CSPELL
 
 PYTHON_PYLINT_ARGUMENTS: --disable=import-error
+PYTHON_PYRIGHT_ARGUMENTS: --ignore=reportMissingImports
 
 VALIDATE_ALL_CODEBASE: true

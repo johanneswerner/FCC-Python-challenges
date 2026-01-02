@@ -1,0 +1,7 @@
+[bandit]
+exclude: 
+tests:
+
+[plugins]
+assert_used:
+  skips: ['*/tests/test_*.py']

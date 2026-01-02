@@ -20,7 +20,7 @@ from challenges.id_145_nth_fibonacci_number.solution import nth_fibonacci
         "15th fibonacci",
         "40th fibonacci",
         "75th fibonacci",
-    ]
+    ],
 )
 def test_nth_fibonacci(n: int, expected: int) -> None:
     """Test nth fibonacci number."""

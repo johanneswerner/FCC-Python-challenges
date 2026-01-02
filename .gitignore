@@ -9,3 +9,6 @@
 
 # Python package metadata
 fcc_python_challenges.egg-info/
+
+# MegaLinter reports
+megalinter-reports/

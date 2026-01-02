@@ -1,2 +1,11 @@
+# UV environemnt
 .venv/
+
+# configuration for IDE
 .idea/
+
+# Python bytecode cache
+**/__pycache__/
+
+# Python package metadata
+fcc_python_challenges.egg-info/

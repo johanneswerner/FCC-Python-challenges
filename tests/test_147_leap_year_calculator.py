@@ -26,7 +26,7 @@ from challenges.id_147_leap_year_calculator.solution import (
         "not leap year - 1999",
         "leap year - 2040",
         "not leap year - 2026",
-    ]
+    ],
 )
 def test_is_leap_year(year: int, expected: bool) -> None:  # noqa: FBT001
     """Test is leap year."""

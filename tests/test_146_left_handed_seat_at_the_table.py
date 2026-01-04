@@ -1,6 +1,7 @@
 """This module contains tests for find left handed seats at the table."""
 
 import pytest
+
 from challenges.id_146_left_handed_seat_at_the_table.solution import (
     find_left_handed_seats,
 )

@@ -1,7 +1,6 @@
 """This module contains tests for find left handed seats at the table."""
 
 import pytest
-
 from challenges.id_147_leap_year_calculator.solution import (
     is_leap_year,
 )

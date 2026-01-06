@@ -20,12 +20,12 @@ def tire_status(pressures_psi: list, range_bar: list) -> list:
     Returns:
             A list of strings indicating the pressure status of each tire.
     """
-    pressures_bar = list(map(lambda x: x / CONVERSION_FACTOR, pressures_psi))
-    return list(
-        map(
-            lambda x: "Low" if x < range_bar[0]
-            else "High" if x > range_bar[1]
-            else "Good",
-            pressures_bar
-        )
-    )
+    pressures_bar = [pressure / CONVERSION_FACTOR for pressure in pressures_psi]
+    return [
+        "Low"
+        if pressure < range_bar[0]
+        else "High"
+        if pressure > range_bar[1]
+        else "Good"
+        for pressure in pressures_bar
+    ]

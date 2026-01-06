@@ -6,6 +6,7 @@ from challenges.id_148_tire_pressure.solution import (
     tire_status,
 )
 
+
 @pytest.mark.parametrize(
     ("pressures_psi", "range_bar"),
     [
@@ -21,7 +22,7 @@ from challenges.id_148_tire_pressure.solution import (
         "tire_status_3",
         "tire_status_4",
         "tire_status_5",
-    ]
+    ],
 )
 def test_tire_pressure(pressures_psi: list, range_bar: list) -> None:
     """Test tire status."""

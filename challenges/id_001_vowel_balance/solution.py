@@ -1,5 +1,7 @@
 """This module deals with determining if the string is balanced."""
 
+VOWELS = set("aeiou")
+
 
 def is_balanced(s: str) -> bool:
     """Check if a string is balanced.
@@ -14,17 +16,11 @@ def is_balanced(s: str) -> bool:
     Returns:
         True if the string is balanced, False otherwise.
     """
-    vowels = set("aeiou")
     s = s.lower()
-    length = len(s)
-    first_list = s[: length // 2]
-    second_list = s[(length + 1) // 2 :]
+    s1 = s[: len(s) // 2]
+    s2 = s[(len(s) + 1) // 2 :]
 
-    sum1, sum2 = 0, 0
-    for first_elem, second_elem in zip(first_list, second_list, strict=True):
-        if first_elem in vowels:
-            sum1 += 1
-        if second_elem in vowels:
-            sum2 += 1
+    sum1 = sum(1 for c in s1 if c in VOWELS)
+    sum2 = sum(1 for c in s2 if c in VOWELS)
 
     return sum1 == sum2

@@ -1,4 +1,19 @@
+"""This module deals with determining if the string is balanced."""
+
 def is_balanced(s):
+    """
+    Check if a string is balanced.
+
+    A string is balanced if the number of vowels in the first half of the string is
+    equal to the number of vowels in the second half of the string. If the string
+    length is odd, the middle character is ignored.
+
+    Args:
+        s: The string to check.
+
+    Returns:
+        True if the string is balanced, False otherwise.
+    """
     vowels = set("aeiou")
     s = s.lower()
     length = len(s)

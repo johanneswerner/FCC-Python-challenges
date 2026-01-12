@@ -6,23 +6,27 @@ from challenges.id_001_vowel_balance.solution import (
     is_balanced,
 )
 
-def test_is_balanced_1():
-    assert is_balanced("racecar") == True
-
-def test_is_balanced_2():
-    assert is_balanced("Lorem Ipsum") == True
-
-def test_is_balanced_3():
-    assert is_balanced("Kitty Ipsum") == False
-
-def test_is_balanced_4():
-    assert is_balanced("string") == False
-
-def test_is_balanced_5():
-    assert is_balanced(" ") == True
-
-def test_is_balanced_6():
-    assert is_balanced("abcdefghijklmnopqrstuvwxyz") == False
-
-def test_is_balanced_7():
-    assert is_balanced("123A#b!E&*456-o.U") == True
+@pytest.mark.parametrize(
+    ("s", "expected"),
+    [
+        ("racecar", True),
+        ("Lorem Ipsum", True),
+        ("Kitty Ipsum", False),
+        ("string", False),
+        (" ", True),
+        ("abcdefghijklmnopqrstuvwxyz", False),
+        ("123A#b!E&*456-o.U", True),
+    ],
+    ids=[
+        "racecar",
+        "Lorem Ipsum",
+        "Kitty Ipsum",
+        "string",
+        "space",
+        "alphabet",
+        "mixed",
+    ]
+)
+def test_is_balanced(s, expected):
+    """Test is_balanced function."""
+    assert is_balanced(s) == expected
